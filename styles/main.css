@@ -1,0 +1,90 @@
+body {
+  color: #333;
+  margin: 0;
+  padding: 0;
+  font-family: "Hei";
+  
+}
+
+#app {
+  background: radial-gradient(#FFF, #DDD);
+  background-size: cover;
+}
+
+#header {
+  padding: 8px;
+  text-align: left;
+  background: #fff;
+
+}
+
+#container {
+  padding: 20px;
+}
+
+.noval-cover {
+  background: #FFF;
+  width: 300px;
+  height: 400px;
+  text-align: center;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 2px 2px 8px;
+  border-radius: 4px 0 0 4px;
+  border-left: 2px solid #333;
+}
+
+.noval-title {
+  text-align: center;
+  margin-top: 40px;
+  
+}
+
+.noval-desc {
+  text-align: left;
+  margin-top: 40px;
+  font-size: 14px;
+  line-height: 18px;
+  text-indent: 2em;
+  
+}
+
+.noval-author {
+  text-align: center;
+  margin: 5px;
+  font-size:12px;
+}
+
+.mini-title {
+  margin: 0;
+}
+
+
+
+.chapter-content {
+  font-size: 14px;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 20px;
+  text-indent: 2em;
+}
+
+.btn-wrap {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.chapter-btn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #333;
+  margin: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.chapter-btn:hover {
+  border-bottom: 1px solid #EEE;
+}
