@@ -1,5 +1,7 @@
 #!node
 
+//生成章节
+
 const fs = require('fs');
 const _ = require("lodash")
 const jsChapterFilePath = './scripts/chapters.js';
