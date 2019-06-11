@@ -1,25 +1,29 @@
 body {
   color: #333;
+  font: 16px "Times New Roman","Microsoft YaHei","Helvetica Neue",Helvetica,"Lucida Grande","Luxi Sans",sans-serif;
+  line-height: 2;
   margin: 0;
-  padding: 0;
-  font-family: "Hei";
   
 }
 
 #app {
-  background: radial-gradient(#FFF, #DDD);
-  background-size: cover;
+  background: #f2e3ce;
+  visibility: hidden;
 }
 
 #header {
   padding: 8px;
+  color: #999;
   text-align: left;
-  background: #fff;
+  /* background: #fff; */
+  border-bottom: 1px solid #333;
+  box-shadow: 0 0 20px 25px #f9f2e8;
 
 }
 
 #container {
   padding: 20px;
+  
 }
 
 .noval-cover {
@@ -55,20 +59,57 @@ body {
   font-size:12px;
 }
 
+
+
+.page {
+  max-width: 880px;
+  margin: 0 auto;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  background-color: #fcf5ed;
+  padding: 40px 110px 10px;
+  margin-bottom: 20px;
+  border-left: 0;
+  box-shadow: 3px 3px 8px -3px #838383;
+}
+
+.page-header {
+  height: 28px;
+  color: #666;
+  font-size: 14px;
+  padding: 36px 0 7px;
+  /* position: absolute; */
+  /* width: 100%; */
+  border-bottom: #dedede solid 1px;
+  /* box-shadow: 0 0 20px 25px #f9f2e8; */
+  clear:both;
+
+}
+
 .mini-title {
   margin: 0;
+  color: #666;
+}
+.header-left {
+  float: left;
 }
 
-
+.header-right {
+  float: right;
+}
 
 .chapter-content {
-  font-size: 14px;
+  font-size: 16px;
   max-width: 600px;
   margin: 0 auto;
-  line-height: 20px;
-  text-indent: 2em;
 }
 
+.chapter-content p {
+  text-indent: 2em;
+  margin-bottom: 16px;
+  text-align: justify;
+}
 .btn-wrap {
   text-align: center;
   margin: 20px auto;
@@ -87,4 +128,15 @@ body {
 
 .chapter-btn:hover {
   border-bottom: 1px solid #EEE;
+}
+
+@media only screen and (max-width: 600px) {
+  .page {
+    padding: 20px;
+    margin: 0;
+  }
+
+  #container {
+    padding: 0px;
+  }
 }

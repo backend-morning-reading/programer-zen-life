@@ -31,7 +31,9 @@ const formatChapter = (_chapter) => {
         },
         mounted: function () {
             document.title = this.title;
-            document.getElementById('app').style.minHeight = window.innerHeight + "px";
+            let doc = document.getElementById('app');
+            doc.style.minHeight = window.innerHeight + "px";
+            doc.style.visibility = 'visible';
             if (window.location.hash) {
                 this.chapter_index = window.location.hash.replace('#', '');
                 if (!chapters[this.chapter_index]) {

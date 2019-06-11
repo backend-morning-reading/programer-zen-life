@@ -14,20 +14,31 @@
 
 <body>
     <div id="app">
-        <header id="header">
-            <p class="mini-title">{{title}}</p>
-        </header>
+
         <section id="container">
             <div v-if="chapter_index == 0" class="noval-cover">
                 <h2 class="noval-title">{{title}}</h2>
                 <p class="noval-author">{{author}} 著</p>
                 <div class="noval-desc" v-html="chapter.content"></div>
+                <div class="btn-wrap">
+                    <button class="chapter-btn" @click="item.action ? (item.action)(item) :next(item.next)"
+                        v-for="(item,index) of chapter.options ">{{item.text}}</button>
+                </div>
             </div>
-            <div v-else class="chapter-content" v-html="chapter.content"></div>
-            <div class="btn-wrap">
-                <button class="chapter-btn" @click="item.action ? (item.action)(item) :next(item.next)"
-                    v-for="(item,index) of chapter.options ">{{item.text}}</button>
+            <div v-else class="page">
+                <div class="page-header">
+                    <div class="header-left">
+                        <span class="mini-title">{{title}}</span>
+                    </div>
+                    <div class="header-right">交互式小说</div>
+                </div>
+                <div class="chapter-content" v-html="chapter.content"></div>
+                <div class="btn-wrap">
+                    <button class="chapter-btn" @click="item.action ? (item.action)(item) :next(item.next)"
+                        v-for="(item,index) of chapter.options ">{{item.text}}</button>
+                </div>
             </div>
+
         </section>
     </div>
     <script src="./scripts/showdown.min.js"></script>
