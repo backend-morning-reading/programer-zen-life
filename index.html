@@ -28,14 +28,14 @@
             <div v-else class="page">
                 <div class="page-header">
                     <div class="header-left">
-                        <span class="mini-title">{{title}}</span>
+                        <span class="mini-title">{{title}} {{chapter_index ? '#' + chapter_index : ''}}</span>
                     </div>
                     <div class="header-right">交互式小说</div>
                 </div>
                 <div class="chapter-content" v-html="chapter.content"></div>
                 <div class="btn-wrap">
                     <button class="chapter-btn" @click="item.action ? (item.action)(item) :next(item.next)"
-                        v-for="(item,index) of chapter.options ">{{item.text}}</button>
+                        v-for="(item,index) of chapter.options ">#{{item.next}} {{item.text}} </button>
                 </div>
             </div>
 

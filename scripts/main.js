@@ -46,6 +46,7 @@ const formatChapter = (_chapter) => {
         methods: {
             next(n) {
                 if (chapters[n]) {
+                    window.scrollTo(0, 0);
                     this.chapter_index = n;
                     window.location.hash = '#' + n;
                     this.chapter = formatChapter(chapters[n])

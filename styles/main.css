@@ -27,15 +27,14 @@ body {
 }
 
 .noval-cover {
-  background: #FFF;
-  width: 300px;
-  height: 400px;
+  width: 400px;
+  height: 600px;
   text-align: center;
   margin: 20px auto;
   padding: 20px;
-  box-shadow: 2px 2px 8px;
   border-radius: 4px 0 0 4px;
-  border-left: 2px solid #333;
+  background-color: #fcf5ed;
+  box-shadow: 3px 3px 8px -3px #838383;
 }
 
 .noval-title {
