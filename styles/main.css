@@ -129,7 +129,7 @@ body {
 }
 
 .chapter-btn:hover {
-  font-size:12px;
+  /* font-size:12px; */
   border-bottom: 1px solid #EEE;
 }
 
