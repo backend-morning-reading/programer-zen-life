@@ -27,6 +27,7 @@ const formatChapter = (_chapter) => {
                 author: "听雨",
                 chapter_index: 0,
                 chapter: formatChapter(chapters[0]),
+                isRendered: false,
             }
         },
         mounted: function () {
@@ -34,26 +35,30 @@ const formatChapter = (_chapter) => {
             let doc = document.getElementById('app');
             doc.style.minHeight = window.innerHeight + "px";
             doc.style.visibility = 'visible';
-            if (window.location.hash) {
-                this.chapter_index = window.location.hash.replace('#', '');
-                if (!chapters[this.chapter_index]) {
-                    this.chapter_index = 0;
-                }
+            this.nextByHash(window.location.hash)
+            window.onhashchange = (e) => {
+                this.nextByHash(window.location.hash)
             }
-            this.chapter = formatChapter(chapters[this.chapter_index]);
+            this.isRendered = true;
 
         },
         methods: {
-            next(n) {
-                if (chapters[n]) {
-                    window.scrollTo(0, 0);
-                    this.chapter_index = n;
-                    window.location.hash = '#' + n;
-                    this.chapter = formatChapter(chapters[n])
+            nextByHash(hash) {
+                this.chapter_index = hash.replace('#', '');
+                if (!this.chapter_index) {
+                    this.chapter_index = 0;
+                }
+                if (!chapters[this.chapter_index]) {
+                    alert("暂未完成，节点#" + this.chapter_index);
+                    if (!this.isRendered) this.chapter_index = 0;
                 } else {
-                    alert("暂未完成，节点#" + n);
+                    window.scrollTo(0, 0);
+                    this.chapter = formatChapter(chapters[this.chapter_index])
                 }
 
+            },
+            next(n) {
+                window.location.hash = '#' + n;
             }
         }
     });
