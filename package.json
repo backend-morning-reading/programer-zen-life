@@ -1,11 +1,14 @@
 {
   "name": "programer-zen-life",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "交互式小说框架",
   "main": "index.js",
   "scripts": {
     "gen": "node ./scripts/cli.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "zen-gen": "index.js"
   },
   "author": "jinyachen@gmail.com",
   "license": "MIT",
