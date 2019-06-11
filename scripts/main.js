@@ -43,9 +43,14 @@ const formatChapter = (_chapter) => {
         },
         methods: {
             next(n) {
-                this.chapter_index = n;
-                window.location.hash = '#' + n;
-                this.chapter = formatChapter(chapters[n])
+                if (chapters[n]) {
+                    this.chapter_index = n;
+                    window.location.hash = '#' + n;
+                    this.chapter = formatChapter(chapters[n])
+                } else {
+                    alert("暂未完成，节点#" + n);
+                }
+
             }
         }
     });

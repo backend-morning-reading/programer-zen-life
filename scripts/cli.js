@@ -5,7 +5,8 @@
 const fs = require('fs');
 const _ = require("lodash")
 const jsChapterFilePath = './scripts/chapters.js';
-const replaceFlag = "//--CHAPTER_ADD_HERE--DO_NOT_MODIFY_THIS_LINE--//";
+const jsChapterJSONPath = './scripts/chapters.json';
+const autoIntent = true;
 
 let _i = _.values(process.argv);
 _i.shift();
@@ -32,7 +33,6 @@ chapter_name = chapter_name.replace(/ \,\'\"\./g, '-');
 let fileContent = fs.readFileSync(`./chapters/${chapter_file_name}`, {
   encoding: 'utf8'
 });
-let convContent = {}
 let chapterBody = [
   [fileContent]
 ];
@@ -40,14 +40,16 @@ for (let o of chapter_options) {
   chapterBody.push(o);
 }
 
-convContent = `${chapter_name}: ` + JSON.stringify(chapterBody);
-
-let jsFileContent = fs.readFileSync(jsChapterFilePath, {
+let chaptersJSONText = fs.readFileSync(jsChapterJSONPath, {
   encoding: 'utf8'
 });
 
-jsFileContent = jsFileContent.replace(replaceFlag, `${convContent},\n${replaceFlag}`);
+let chaptersJSON = JSON.parse(chaptersJSONText);
+chaptersJSON[chapter_name] = chapterBody;
 
-fs.writeFileSync(jsChapterFilePath, jsFileContent);
+chaptersJSONText = JSON.stringify(chaptersJSON, null, autoIntent ? 4 : 0);
+fs.writeFileSync(jsChapterJSONPath, chaptersJSONText);
+fs.writeFileSync(jsChapterFilePath, `const chapters = ${chaptersJSONText}`);
+
 console.log(`✅ Generate success! ${chapter_name}`);
 // console.log(convContent);
