@@ -28,9 +28,13 @@ zen-gen -h
 zen-gen -c chapter_file_name.md chapter_node_option_text_1 chapter_node_option_no_1 chapter_node_option_text_2 chapter_node_option_no_2
 ```
 
-# Preview
+# Develop Preview
 
 ```
 index.html
 ```
+
+# Publish
+
+https://codefarmer.art/programer-zen-life/index.html
 
