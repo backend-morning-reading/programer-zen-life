@@ -4,7 +4,7 @@
   "description": "交互式小说框架",
   "main": "cli.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "zen-gen -c 1.md"
   },
   "bin": {
     "zen-gen": "cli.js"
