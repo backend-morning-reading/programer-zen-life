@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1,user-scalable=no" name="viewport">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>新型交互小说</title>
+    <link href="favicon.ico" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./styles/main.css">
+</head>
+
+<body>
+    <div id="app">
+
+        <section id="container">
+            <div v-if="chapter_index == 0" class="noval-cover">
+                <h2 class="noval-title">{{title}}</h2>
+                <p class="noval-author">{{author}} 著</p>
+                <div class="noval-desc" v-html="chapter.content"></div>
+                <div class="btn-wrap">
+                    <button class="chapter-btn" @click="item.action ? (item.action)(item) :next(item.next)"
+                        v-for="(item,index) of chapter.options ">{{item.text}}</button>
+                </div>
+            </div>
+            <div v-else class="page">
+                <div class="page-header">
+                    <div class="header-left">
+                        <span class="mini-title">{{title}} {{chapter_index ? '#' + chapter_index : ''}}</span>
+                    </div>
+                    <div class="header-right">交互式小说</div>
+                </div>
+                <div class="chapter-content" v-html="chapter.content"></div>
+                <div class="btn-wrap">
+                    <button class="chapter-btn" @click="item.action ? (item.action)(item) :next(item.next)"
+                        v-for="(item,index) of chapter.options ">#{{item.next}} {{item.text}} </button>
+                </div>
+            </div>
+
+        </section>
+        <footer id="footer">
+            <a class="github-anchor" target="__blank"
+                href="https://github.com/codefarmer-art/programer-zen-life">Github:
+                codefarmer-art/programer-zen-life</a>
+        </footer>
+    </div>
+    <script src="./scripts/showdown.min.js"></script>
+    <script src="./scripts/chapters.js"></script>
+    <script src="./scripts/vue-router.js"></script>
+    <script src="./scripts/vue.js"></script>
+    <script src="./scripts/main.js"></script>
+</body>
+
+</html>
