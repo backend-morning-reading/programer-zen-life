@@ -1,8 +1,7 @@
-《程序员修仙》
+交互式小说协作框架
 ----
 
-交互式小说。
-
+样例为转自 [职员默示录 - 启](https://github.com/gs3170981/relax-for-a-moment) 的交互式小说
 
 # Install
 
