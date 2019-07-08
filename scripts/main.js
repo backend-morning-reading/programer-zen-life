@@ -23,8 +23,8 @@ const formatChapter = (_chapter) => {
         el: '#app',
         data: function () {
             return {
-                title: "程序员修仙传",
-                author: "听雨",
+                title: "职员默示录 - 启",
+                author: "原作者: 清一色天空 改编: 金克木",
                 chapter_index: 0,
                 chapter: formatChapter(chapters[0]),
                 isRendered: false,
