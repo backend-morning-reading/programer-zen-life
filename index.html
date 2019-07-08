@@ -18,7 +18,7 @@
         <section id="container">
             <div v-if="chapter_index == 0" class="noval-cover">
                 <h2 class="noval-title">{{title}}</h2>
-                <p class="noval-author">{{author}} 著</p>
+                <p class="noval-author">{{author}}</p>
                 <div class="noval-desc" v-html="chapter.content"></div>
                 <div class="btn-wrap">
                     <button class="chapter-btn" @click="item.action ? (item.action)(item) :next(item.next)"
